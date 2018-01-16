@@ -1,10 +1,10 @@
-# React Node Project Starter
+# Portfolio
 
 ## Dependency Documentation
 
 - [react](https://facebook.github.io/react/docs/hello-world.html)
-- [react-router](https://reacttraining.com/react-router/)
 - [material-ui](https://material-ui-1dab0.firebaseapp.com/getting-started/usage/)
+- [fortawesome v5](https://github.com/FortAwesome/react-fontawesome)
 
 ## Environment Setup
 
