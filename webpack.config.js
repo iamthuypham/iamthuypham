@@ -7,18 +7,27 @@ var config = {
   ],
   output: {
     path: __dirname+'/public/js',
-    publicPath: '/js/',
+    publicPath: '/js',
     filename: 'bundle.js'
   },
+  devtool: 'inline-source-map',
   module: {
-    loaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-      query: {
-        presets: ['es2015', 'react']
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015', 'react']
+        }
+      },{
+        test: /\.css$/,
+        loader: 'css-loader'
+      },{
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'url-loader',
       }
-    }]
+    ]
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json']
@@ -29,7 +38,7 @@ var config = {
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
       }
     }),
-    new webpack.optimize.AggressiveMergingPlugin()
+    new webpack.optimize.AggressiveMergingPlugin(),
   ],
   devServer: {
     compress: true,
