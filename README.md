@@ -1,4 +1,4 @@
-# Portfolio
+# Thuy Pham Portfolio
 
 ## Dependency Documentation
 
