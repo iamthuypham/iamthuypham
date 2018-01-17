@@ -11,7 +11,7 @@ import ExpansionPanel, {
 
 import Icon from './Icon';
 
-const Project = ({ classes, name, link, time, org, detail, handleChange }) => {
+const Project = ({ classes, name, link, time, org, request, solution, result, handleChange }) => {
   return (
     <ExpansionPanel className={classes.expansionPanel} onChange={(e,expanded) => handleChange(e,expanded)}>
       <ExpansionPanelSummary className={classes.expansionPanelSummary} expandIcon={<Icon name='faCaretSquareDown' />}>
@@ -21,8 +21,23 @@ const Project = ({ classes, name, link, time, org, detail, handleChange }) => {
           <Typography type='body2'>{time}</Typography>
         </div>
       </ExpansionPanelSummary>
-      <ExpansionPanelDetails>
-        <Typography type='body1'>{detail}</Typography>
+      <ExpansionPanelDetails className={classes.expansionPanelDetails}>
+        <div>
+          <Typography type='display1'>Request</Typography>
+          <Typography type='body1'>{request}</Typography>
+        </div>
+        <div>
+          <Typography type='display1'>Solution</Typography>
+          { solution.map((s,i) => (
+            <Typography key={i} type='body1'>{s}</Typography>
+          ))}
+        </div>
+        <div>
+          <Typography type='display1'>Result</Typography>
+          { result && result.map((r,i) => (
+            <Typography key={i} type='body1'>{r}</Typography>
+          ))}
+        </div>
       </ExpansionPanelDetails>
     </ExpansionPanel>
 )}
@@ -43,6 +58,13 @@ const styles = theme => ({
     '&>div:first-child': {
       marginTop: theme.spacing*2,
       marginBottom: theme.spacing
+    }
+  },
+  expansionPanelDetails: {
+    flexDirection: 'column',
+    '& >div': {
+      marginBottom: theme.spacing,
+      marginLeft: theme.spacing
     }
   }
 });

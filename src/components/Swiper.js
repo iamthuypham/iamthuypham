@@ -36,7 +36,7 @@ class Swiper extends React.Component {
           { imgList && imgList.map((img) => 
             ( 
             <div key={img} style={Object.assign({}, styles.slide, styles.slide1)}>
-              <img src={require(`../img/${img}.jpg`)} className={classes.img}/>
+              <img src={require(`../img/${img}.png`)} className={classes.img}/>
             </div>
             )  
           )}
@@ -57,7 +57,7 @@ const styles = theme => ({
     color: '#fff',
   },
   img: {
-    height: '100%'
+    width: '100%'
   }
 })
 

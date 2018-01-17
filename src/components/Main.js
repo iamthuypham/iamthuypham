@@ -36,7 +36,10 @@ class Main extends React.Component {
           <Skill key={skill} name={skill}/>
         )}
         {projects && projects.map((project) => (
-          <Project key={project.id} name={project.name} link={project.link} time={project.time} org={project.org} detail={project.detail}
+          <Project key={project.id} name={project.name} link={project.link} time={project.time} org={project.org} 
+            request={project.request}
+            solution={project.solution}
+            result={project.result}
             handleChange={(e, expanded) => this.handleChange(e, expanded, project.id)}/>  
         ))}
       </div>
